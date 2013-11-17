@@ -39853,6 +39853,9 @@ Source: http://focus.ti.com/lit/ds/symlink/tps77001.pdf</description>
 <part name="H2" library="holes" deviceset="MOUNT-HOLE" device="2.8"/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
 <part name="LOGO1" library="ea" deviceset="OSHW_LOGO_8MIL" device="X0200-NT"/>
+<part name="PD6" library="testpad" deviceset="TP" device="TP15SQ"/>
+<part name="PD5" library="testpad" deviceset="TP" device="TP15SQ"/>
+<part name="PB7" library="testpad" deviceset="TP" device="TP15SQ"/>
 </parts>
 <sheets>
 <sheet>
@@ -39964,11 +39967,11 @@ EN not inverted</text>
 <instance part="ENCA" gate="G$1" x="190.5" y="124.46" rot="R270"/>
 <instance part="ENCB" gate="G$1" x="185.42" y="121.92" rot="R270"/>
 <instance part="ENCBTN" gate="G$1" x="198.12" y="119.38" rot="R270"/>
-<instance part="Q1" gate="G$1" x="93.98" y="134.62">
-<attribute name="REICHELT#" x="86.36" y="124.46" size="1.778" layer="96" display="both"/>
+<instance part="Q1" gate="G$1" x="78.74" y="134.62">
+<attribute name="REICHELT#" x="71.12" y="124.46" size="1.778" layer="96" display="both"/>
 </instance>
-<instance part="GND32" gate="1" x="81.28" y="127"/>
-<instance part="P+18" gate="VCC" x="81.28" y="142.24"/>
+<instance part="GND32" gate="1" x="66.04" y="127"/>
+<instance part="P+18" gate="VCC" x="66.04" y="142.24"/>
 <instance part="ONBTN" gate="G$1" x="208.28" y="111.76" rot="R270"/>
 <instance part="ONBTN_3V3" gate="G$1" x="215.9" y="111.76" rot="R90"/>
 <instance part="P+19" gate="VCC" x="220.98" y="116.84" rot="MR0"/>
@@ -39982,6 +39985,9 @@ EN not inverted</text>
 <instance part="H2" gate="G$1" x="218.44" y="63.5"/>
 <instance part="GND16" gate="1" x="68.58" y="-116.84"/>
 <instance part="LOGO1" gate="G$1" x="208.28" y="43.18"/>
+<instance part="PD6" gate="G$1" x="180.34" y="114.3" rot="R270"/>
+<instance part="PD5" gate="G$1" x="182.88" y="116.84" rot="R270"/>
+<instance part="PB7" gate="G$1" x="101.6" y="132.08" rot="MR270"/>
 </instances>
 <busses>
 <bus name="DIGIT[0..7]">
@@ -40091,8 +40097,8 @@ EN not inverted</text>
 <wire x1="137.16" y1="27.94" x2="137.16" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="83.82" y1="132.08" x2="81.28" y2="132.08" width="0.1524" layer="91"/>
-<wire x1="81.28" y1="132.08" x2="81.28" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="132.08" x2="66.04" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="132.08" x2="66.04" y2="129.54" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="GND"/>
 <pinref part="GND32" gate="1" pin="GND"/>
 </segment>
@@ -40153,8 +40159,8 @@ EN not inverted</text>
 <junction x="137.16" y="48.26"/>
 </segment>
 <segment>
-<wire x1="83.82" y1="137.16" x2="81.28" y2="137.16" width="0.1524" layer="91"/>
-<wire x1="81.28" y1="137.16" x2="81.28" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="137.16" x2="66.04" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="137.16" x2="66.04" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="VCC"/>
 <pinref part="P+18" gate="VCC" pin="VCC"/>
 </segment>
@@ -40934,9 +40940,30 @@ EN not inverted</text>
 </net>
 <net name="CLK_STM" class="0">
 <segment>
-<wire x1="104.14" y1="137.16" x2="111.76" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="137.16" x2="111.76" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="OUT"/>
 <pinref part="ATMEGA88PA" gate="1" pin="PB6(XTAL1/TOSC1/PCINT6)"/>
+</segment>
+</net>
+<net name="N$56" class="0">
+<segment>
+<pinref part="ATMEGA88PA" gate="1" pin="PD5(T1/OC0B/PCINT21)"/>
+<wire x1="172.72" y1="116.84" x2="180.34" y2="116.84" width="0.1524" layer="91"/>
+<pinref part="PD5" gate="G$1" pin="TP"/>
+</segment>
+</net>
+<net name="N$57" class="0">
+<segment>
+<pinref part="ATMEGA88PA" gate="1" pin="PD6(AIN0/OC0A/PCINT22)"/>
+<wire x1="172.72" y1="114.3" x2="177.8" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="PD6" gate="G$1" pin="TP"/>
+</segment>
+</net>
+<net name="N$58" class="0">
+<segment>
+<pinref part="ATMEGA88PA" gate="1" pin="PB7(XTAL2/TOSC2/PCINT7)"/>
+<pinref part="PB7" gate="G$1" pin="TP"/>
+<wire x1="104.14" y1="132.08" x2="111.76" y2="132.08" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
