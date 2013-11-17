@@ -39820,7 +39820,7 @@ Source: http://focus.ti.com/lit/ds/symlink/tps77001.pdf</description>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="R10" library="resistor" deviceset="R-EU_" device="R0603" value="0"/>
-<part name="IC1" library="texas" deviceset="TPS770*" device="" technology="33"/>
+<part name="TPS70933" library="texas" deviceset="TPS770*" device="" technology="33"/>
 <part name="P+16" library="supply1" deviceset="+12V" device=""/>
 <part name="P+17" library="supply1" deviceset="VCC" device=""/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
@@ -39952,7 +39952,7 @@ EN not inverted</text>
 <instance part="GND8" gate="1" x="45.72" y="-116.84"/>
 <instance part="GND10" gate="1" x="27.94" y="-76.2"/>
 <instance part="R10" gate="G$1" x="27.94" y="-66.04" rot="R90"/>
-<instance part="IC1" gate="G$1" x="119.38" y="43.18"/>
+<instance part="TPS70933" gate="G$1" x="119.38" y="43.18"/>
 <instance part="P+16" gate="1" x="88.9" y="53.34"/>
 <instance part="P+17" gate="VCC" x="139.7" y="53.34"/>
 <instance part="GND11" gate="1" x="106.68" y="25.4"/>
@@ -40067,7 +40067,7 @@ EN not inverted</text>
 <segment>
 <pinref part="GND11" gate="1" pin="GND"/>
 <wire x1="106.68" y1="27.94" x2="106.68" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="GND"/>
+<pinref part="TPS70933" gate="G$1" pin="GND"/>
 <wire x1="106.68" y1="38.1" x2="109.22" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -40149,7 +40149,7 @@ EN not inverted</text>
 <wire x1="78.74" y1="-27.94" x2="78.74" y2="-33.02" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="IC1" gate="G$1" pin="OUT"/>
+<pinref part="TPS70933" gate="G$1" pin="OUT"/>
 <pinref part="P+17" gate="VCC" pin="VCC"/>
 <wire x1="132.08" y1="48.26" x2="137.16" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="48.26" x2="139.7" y2="48.26" width="0.1524" layer="91"/>
@@ -40412,7 +40412,7 @@ EN not inverted</text>
 <segment>
 <pinref part="P+16" gate="1" pin="+12V"/>
 <wire x1="88.9" y1="50.8" x2="88.9" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="IN"/>
+<pinref part="TPS70933" gate="G$1" pin="IN"/>
 <wire x1="88.9" y1="48.26" x2="91.44" y2="48.26" width="0.1524" layer="91"/>
 <junction x="91.44" y="48.26"/>
 <wire x1="91.44" y1="48.26" x2="109.22" y2="48.26" width="0.1524" layer="91"/>
@@ -40890,7 +40890,7 @@ EN not inverted</text>
 </net>
 <net name="ON" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="!EN"/>
+<pinref part="TPS70933" gate="G$1" pin="!EN"/>
 <wire x1="109.22" y1="43.18" x2="99.06" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="43.18" x2="99.06" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="R11" gate="G$1" pin="2"/>
