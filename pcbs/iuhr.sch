@@ -39852,7 +39852,8 @@ Source: http://focus.ti.com/lit/ds/symlink/tps77001.pdf</description>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
 <part name="H2" library="holes" deviceset="MOUNT-HOLE" device="2.8"/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
-<part name="LOGO2" library="ea" deviceset="OSHW_LOGO_8MIL" device="X0150-NT"/>
+<part name="LOGO1" library="ea" deviceset="OSHW_LOGO_8MIL" device="X0200-NT"/>
+<part name="LOGO3" library="ea" deviceset="OSHW_LOGO_8MIL" device="X0350-NT"/>
 </parts>
 <sheets>
 <sheet>
@@ -39981,7 +39982,8 @@ EN not inverted</text>
 <instance part="GND15" gate="1" x="88.9" y="-30.48"/>
 <instance part="H2" gate="G$1" x="218.44" y="63.5"/>
 <instance part="GND16" gate="1" x="68.58" y="-116.84"/>
-<instance part="LOGO2" gate="G$1" x="187.96" y="45.72"/>
+<instance part="LOGO1" gate="G$1" x="208.28" y="43.18"/>
+<instance part="LOGO3" gate="G$1" x="193.04" y="35.56"/>
 </instances>
 <busses>
 <bus name="DIGIT[0..7]">
