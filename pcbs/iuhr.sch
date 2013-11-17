@@ -39820,7 +39820,7 @@ Source: http://focus.ti.com/lit/ds/symlink/tps77001.pdf</description>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="R10" library="resistor" deviceset="R-EU_" device="R0603" value="0"/>
-<part name="TPS70933" library="texas" deviceset="TPS770*" device="" technology="33"/>
+<part name="TPS70933" library="texas" deviceset="TPS770*" device="" technology="50" value="TPS77050"/>
 <part name="P+16" library="supply1" deviceset="+12V" device=""/>
 <part name="P+17" library="supply1" deviceset="VCC" device=""/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
@@ -39856,13 +39856,16 @@ Source: http://focus.ti.com/lit/ds/symlink/tps77001.pdf</description>
 <part name="PD6" library="testpad" deviceset="TP" device="TP15SQ"/>
 <part name="PD5" library="testpad" deviceset="TP" device="TP15SQ"/>
 <part name="PB7" library="testpad" deviceset="TP" device="TP15SQ"/>
+<part name="C7" library="resistor" deviceset="C-EU" device="C0603" value="100nF"/>
+<part name="GND17" library="supply1" deviceset="GND" device=""/>
+<part name="P+21" library="supply1" deviceset="+12V" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 <text x="132.08" y="157.48" size="1.778" layer="97">atmega88a-pa</text>
 <text x="20.32" y="-106.68" size="1.778" layer="97">Max Current: 40mA</text>
-<text x="111.76" y="30.48" size="1.778" layer="97">TPS70933DBVR</text>
+<text x="111.76" y="30.48" size="1.778" layer="97">TPS70950DBVR</text>
 <text x="111.76" y="22.86" size="1.27" layer="97">same package
 150mA
 EN not inverted</text>
@@ -39988,6 +39991,9 @@ EN not inverted</text>
 <instance part="PD6" gate="G$1" x="180.34" y="114.3" rot="R270"/>
 <instance part="PD5" gate="G$1" x="182.88" y="116.84" rot="R270"/>
 <instance part="PB7" gate="G$1" x="101.6" y="132.08" rot="MR270"/>
+<instance part="C7" gate="G$1" x="177.8" y="-30.48"/>
+<instance part="GND17" gate="1" x="177.8" y="-40.64"/>
+<instance part="P+21" gate="1" x="177.8" y="-22.86"/>
 </instances>
 <busses>
 <bus name="DIGIT[0..7]">
@@ -40111,6 +40117,11 @@ EN not inverted</text>
 <pinref part="TLC5951" gate="G$1" pin="PAD"/>
 <pinref part="GND16" gate="1" pin="GND"/>
 <wire x1="68.58" y1="-114.3" x2="68.58" y2="-111.76" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C7" gate="G$1" pin="2"/>
+<pinref part="GND17" gate="1" pin="GND"/>
+<wire x1="177.8" y1="-38.1" x2="177.8" y2="-35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -40429,6 +40440,11 @@ EN not inverted</text>
 <wire x1="68.58" y1="43.18" x2="68.58" y2="48.26" width="0.1524" layer="91"/>
 <junction x="60.96" y="48.26"/>
 <junction x="68.58" y="48.26"/>
+</segment>
+<segment>
+<pinref part="C7" gate="G$1" pin="1"/>
+<wire x1="177.8" y1="-25.4" x2="177.8" y2="-27.94" width="0.1524" layer="91"/>
+<pinref part="P+21" gate="1" pin="+12V"/>
 </segment>
 </net>
 <net name="N$29" class="0">

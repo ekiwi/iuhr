@@ -8,7 +8,7 @@
 </settings>
 <grid distance="0.2" unitdist="mm" unit="mm" style="dots" multiple="1" display="yes" altdistance="0.15875" altunitdist="mm" altunit="mm"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
@@ -28,11 +28,11 @@
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
@@ -46,7 +46,7 @@
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
 <layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
@@ -58,7 +58,7 @@
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
@@ -5612,11 +5612,11 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="NAME" x="1.311" y="8.311" size="0.8128" layer="25" rot="R90"/>
 <attribute name="VALUE" x="3.032" y="11.111" size="1.27" layer="27" rot="R90"/>
 </element>
-<element name="TPS70933" library="texas" package="SOT23-DBV" value="TPS77033" x="35" y="7.8" smashed="yes" rot="MR270">
-<attribute name="OC_NEWARK" value="77C1187" x="61.67" y="-41.73" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="MPN" value="TPS77033DBVT" x="61.67" y="-41.73" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="MF" value="TEXAS INSTRUMENTS" x="61.67" y="-41.73" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="OC_FARNELL" value="8461570" x="61.67" y="-41.73" size="1.778" layer="28" rot="MR270" display="off"/>
+<element name="TPS70933" library="texas" package="SOT23-DBV" value="TPS77050" x="35" y="7.8" smashed="yes" rot="MR270">
+<attribute name="OC_NEWARK" value="77C1189" x="61.67" y="-41.73" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="MPN" value="TPS77050DBVT" x="61.67" y="-41.73" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="MF" value="TEXAS INSTRUMENT CONNECTORS" x="61.67" y="-41.73" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="OC_FARNELL" value="1412883" x="61.67" y="-41.73" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="NAME" x="37.895" y="9.705" size="0.8128" layer="26" rot="MR270"/>
 <attribute name="VALUE" x="38.429" y="9.705" size="1.27" layer="28" rot="MR270"/>
 </element>
@@ -5701,6 +5701,7 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="NAME" x="31.1501" y="4.0001" size="0.8128" layer="26" rot="MR270"/>
 <attribute name="VALUE" x="31.562" y="-0.089" size="0.0254" layer="28" rot="MR0"/>
 </element>
+<element name="C7" library="resistor" package="C0603" value="100nF" x="21.4" y="4.2" rot="R180"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -5874,6 +5875,7 @@ Please make sure your boards conform to these design rules.</description>
 <via x="10.6" y="7.2" extent="1-16" drill="0.3302"/>
 <via x="11.4" y="7.2" extent="1-16" drill="0.3302"/>
 <via x="12.2" y="7.2" extent="1-16" drill="0.3302"/>
+<contactref element="C7" pad="2"/>
 </signal>
 <signal name="VCC">
 <contactref element="ATMEGA88PA" pad="4"/>
@@ -6081,8 +6083,6 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$15">
 <contactref element="DB" pad="TP"/>
 <contactref element="TLC5951" pad="18"/>
-<wire x1="18" y1="3.6" x2="20.8" y2="3.6" width="0.3" layer="1"/>
-<wire x1="20.8" y1="3.6" x2="23.6" y2="0.8" width="0.3" layer="1"/>
 <wire x1="14.4" y1="4.4" x2="17.2" y2="4.4" width="0.3" layer="1"/>
 <wire x1="17.2" y1="4.4" x2="18" y2="3.6" width="0.3" layer="1"/>
 <wire x1="13.4" y1="5.65" x2="13.4" y2="5.4" width="0.3" layer="1"/>
@@ -6090,6 +6090,11 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="14" y1="4.8" x2="13.6" y2="4.8" width="0.3" layer="1"/>
 <wire x1="13.6" y1="4.8" x2="13.4" y2="5" width="0.3" layer="1"/>
 <wire x1="13.4" y1="5" x2="13.4" y2="5.65" width="0.3" layer="1"/>
+<wire x1="23.6" y1="0.8" x2="23.6" y2="1" width="0.3" layer="1"/>
+<wire x1="23.6" y1="1" x2="22.4" y2="2.2" width="0.3" layer="1"/>
+<wire x1="22.4" y1="2.2" x2="21" y2="2.2" width="0.3" layer="1"/>
+<wire x1="21" y1="2.2" x2="19.6" y2="3.6" width="0.3" layer="1"/>
+<wire x1="19.6" y1="3.6" x2="18" y2="3.6" width="0.3" layer="1"/>
 </signal>
 <signal name="N$16">
 <contactref element="ER" pad="TP"/>
@@ -6265,6 +6270,9 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="34.15" y1="10.8" x2="34.35" y2="10.6" width="1" layer="16"/>
 <wire x1="32" y1="11.15" x2="32.2" y2="11" width="1" layer="16"/>
 <wire x1="32.2" y1="11" x2="32.4" y2="10.8" width="1" layer="16"/>
+<contactref element="C7" pad="1"/>
+<wire x1="22.7178" y1="4.0822" x2="22.5678" y2="4.0822" width="0.3" layer="1"/>
+<wire x1="22.5678" y1="4.0822" x2="22.25" y2="4.2" width="0.3" layer="1"/>
 </signal>
 <signal name="N$29">
 <contactref element="IRF7104" pad="8"/>
@@ -6865,14 +6873,14 @@ Please make sure your boards conform to these design rules.</description>
 <approved hash="4,1,c33f2e0c9e47c373"/>
 <approved hash="4,1,fb3cc60aa6421b76"/>
 <approved hash="4,1,833e5e0b4e418375"/>
-<approved hash="4,1,7728151429264bba"/>
 <approved hash="4,1,73e0135c28ce4ed2"/>
+<approved hash="4,1,7728151429264bba"/>
 <approved hash="4,1,75f015d4282249c6"/>
 <approved hash="4,1,7388137c28324ec6"/>
 <approved hash="4,1,77a017642a324836"/>
 <approved hash="4,1,7528151c290248d6"/>
-<approved hash="4,1,75e815dc2a2249f6"/>
 <approved hash="4,1,7520150429324ad6"/>
+<approved hash="4,1,75e815dc2a2249f6"/>
 <approved hash="4,16,d13732c40e15ec46"/>
 <approved hash="4,16,d03f323c0e2decae"/>
 <approved hash="4,16,d06f327c0e2dedde"/>
