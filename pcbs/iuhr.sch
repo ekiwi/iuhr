@@ -40784,9 +40784,11 @@ EN not inverted</text>
 <label x="45.72" y="-83.82" size="1.778" layer="95" rot="MR0" xref="yes"/>
 </segment>
 <segment>
-<pinref part="IC2" gate="1" pin="PD5(T1/OC0B/PCINT21)"/>
-<wire x1="172.72" y1="116.84" x2="175.26" y2="116.84" width="0.1524" layer="91"/>
-<label x="175.26" y="116.84" size="1.778" layer="95" xref="yes"/>
+<pinref part="IC2" gate="1" pin="PB0(ICP1/CLKO/PCINT0)"/>
+<wire x1="172.72" y1="106.68" x2="175.26" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="106.68" x2="175.26" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="109.22" x2="185.42" y2="109.22" width="0.1524" layer="91"/>
+<label x="185.42" y="109.22" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="XBLINK" class="0">
