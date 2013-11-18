@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.4">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -8,7 +8,7 @@
 </settings>
 <grid distance="0.2" unitdist="mm" unit="mm" style="dots" multiple="1" display="yes" altdistance="0.15875" altunitdist="mm" altunit="mm"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
@@ -29,11 +29,11 @@
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
@@ -46,19 +46,19 @@
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
-<layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
@@ -5274,6 +5274,34 @@ We've spent an enormous amount of time creating and checking these footprints an
 </package>
 </packages>
 </library>
+<library name="diode">
+<description>&lt;b&gt;Diodes&lt;/b&gt;&lt;p&gt;
+Based on the following sources:
+&lt;ul&gt;
+&lt;li&gt;Motorola : www.onsemi.com
+&lt;li&gt;Fairchild : www.fairchildsemi.com
+&lt;li&gt;Philips : www.semiconductors.com
+&lt;li&gt;Vishay : www.vishay.de
+&lt;/ul&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SOD323-R">
+<description>&lt;b&gt;SOD323 Reflow soldering&lt;/b&gt; Philips SC01_Mounting_1996.pdf</description>
+<wire x1="-1" y1="0.7" x2="1" y2="0.7" width="0.1524" layer="51"/>
+<wire x1="1" y1="0.7" x2="1" y2="-0.7" width="0.1524" layer="51"/>
+<wire x1="1" y1="-0.7" x2="-1" y2="-0.7" width="0.1524" layer="51"/>
+<wire x1="-1" y1="-0.7" x2="-1" y2="0.7" width="0.1524" layer="51"/>
+<wire x1="-0.5" y1="0" x2="0.1" y2="0.4" width="0.1524" layer="51"/>
+<wire x1="0.1" y1="0.4" x2="0.1" y2="-0.4" width="0.1524" layer="51"/>
+<wire x1="0.1" y1="-0.4" x2="-0.5" y2="0" width="0.1524" layer="51"/>
+<smd name="C" x="-1.1" y="0" dx="0.6" dy="0.6" layer="1"/>
+<smd name="A" x="1.1" y="0" dx="0.6" dy="0.6" layer="1"/>
+<text x="-1.1" y="1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.1" y="-2.3" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.7" y1="-0.7" x2="-0.5" y2="0.7" layer="51"/>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -5708,11 +5736,11 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="NAME" x="29.7" y="3.5" size="0.8128" layer="26" rot="MR270"/>
 <attribute name="VALUE" x="32.3" y="7.5" size="1.27" layer="28" rot="MR270"/>
 </element>
-<element name="ONBTN" library="testpad" package="TP15SQ" value="TPTP15SQ" x="36" y="0.8" smashed="yes" rot="MR0">
+<element name="ONBTN_B" library="testpad" package="TP15SQ" value="TPTP15SQ" x="36" y="0.8" smashed="yes" rot="MR0">
 <attribute name="TP_SIGNAL_NAME" value="" x="36" y="-1.74" size="1" layer="38" rot="MR0"/>
 <attribute name="VALUE" x="36.762" y="-0.089" size="0.0254" layer="28" rot="MR0"/>
 </element>
-<element name="ONBTN_3V3" library="testpad" package="TP15SQ" value="TPTP15SQ" x="34" y="0.8" smashed="yes" rot="MR0">
+<element name="ONBTN_A" library="testpad" package="TP15SQ" value="TPTP15SQ" x="34" y="0.8" smashed="yes" rot="MR0">
 <attribute name="TP_SIGNAL_NAME" value="" x="34" y="-1.74" size="1" layer="38" rot="MR0"/>
 <attribute name="VALUE" x="34.762" y="-0.089" size="0.0254" layer="28" rot="MR0"/>
 </element>
@@ -5752,10 +5780,18 @@ Please make sure your boards conform to these design rules.</description>
 </element>
 <element name="C7" library="resistor" package="C0603" value="100nF" x="21.8" y="4.4" rot="R180"/>
 <element name="C8" library="resistor" package="C0603" value="tbd" x="36.6" y="5.2" rot="MR180"/>
-<element name="R12" library="resistor" package="R0603" value="100" x="36.4" y="3.8" rot="MR180"/>
 <element name="U$2" library="ShortCircuitRobotics" package="SO8-2" value="IRF7416" x="30.4" y="10.8" rot="MR270"/>
 <element name="R13" library="resistor" package="R0603" value="10k" x="26.4" y="16.2" rot="MR90"/>
 <element name="Q2" library="SparkFun" package="SOT23-3" value="MOSFET-NCHANNELSMD" x="28.6" y="7.8" rot="MR0"/>
+<element name="D1" library="diode" package="SOD323-R" value="" x="0.6" y="-10.8">
+<attribute name="IDENTIFIER" value="1N4148-WS" x="0.6" y="-10.8" size="1.778" layer="27" display="off"/>
+<attribute name="#REICHELT" value="1N 4148 WS" x="0.6" y="-10.8" size="1.778" layer="27" display="off"/>
+<attribute name="U_D1" value="~0.6V" x="0.6" y="-10.8" size="1.778" layer="27" display="off"/>
+</element>
+<element name="R12" library="resistor" package="R0603" value="14k" x="0.6" y="-14.4"/>
+<element name="12V_IN1" library="testpad" package="TP20SQ" value="TPTP20SQ" x="0.6" y="-19.8">
+<attribute name="TP_SIGNAL_NAME" value="" x="0.6" y="-19.8" size="1.778" layer="27" display="off"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">
@@ -6010,7 +6046,6 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="TPS70933" pad="5"/>
 <contactref element="C6" pad="1"/>
 <contactref element="Q1" pad="4"/>
-<contactref element="ONBTN_3V3" pad="TP"/>
 <contactref element="C5" pad="1"/>
 <wire x1="33.7" y1="8.75" x2="32.1" y2="8.75" width="0.5" layer="16"/>
 <wire x1="32.1" y1="8.75" x2="31.4" y2="7.85" width="0.5" layer="16"/>
@@ -6029,9 +6064,6 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="26.275" y1="6.475" x2="26.6" y2="6.475" width="0.5" layer="16"/>
 <wire x1="24.2926" y1="5.6" x2="25.25" y2="5.6" width="0.5" layer="16"/>
 <wire x1="25.25" y1="5.6" x2="26" y2="6.35" width="0.5" layer="16"/>
-<wire x1="34" y1="0.8" x2="34" y2="2.8" width="0.5" layer="16"/>
-<wire x1="34" y1="2.8" x2="33.4" y2="3.4" width="0.5" layer="16"/>
-<wire x1="33.4" y1="3.4" x2="30.8" y2="3.4" width="0.5" layer="16"/>
 <via x="3.4" y="16.4" extent="1-16" drill="0.3302"/>
 <wire x1="3.4" y1="16.4" x2="3.4" y2="17.4" width="0.3" layer="16"/>
 <wire x1="3.4" y1="17.4" x2="3.6" y2="17.6" width="0.3" layer="16"/>
@@ -6070,7 +6102,6 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="27.725" y1="4.625" x2="27.375" y2="4.625" width="0.5" layer="16"/>
 <wire x1="27.375" y1="4.625" x2="26.6" y2="5.4" width="0.5" layer="16"/>
 <wire x1="26.6" y1="5.4" x2="26.6" y2="6.475" width="0.5" layer="16"/>
-<wire x1="27.725" y1="4.625" x2="30.8" y2="3.4" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="RESET">
 <contactref element="U$5" pad="MISO"/>
@@ -6558,11 +6589,9 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 <signal name="DIGIT6">
 <contactref element="ADG3123" pad="8"/>
-<contactref element="ATMEGA88PA" pad="19"/>
 <wire x1="16.8822" y1="6.775" x2="17.825" y2="6.775" width="0.2" layer="1"/>
 <wire x1="17.825" y1="6.775" x2="18.2" y2="6.4" width="0.2" layer="1"/>
 <via x="18.2" y="6.4" extent="1-16" drill="0.3302"/>
-<wire x1="16.6" y1="5.6" x2="15.7074" y2="5.6" width="0.2" layer="16"/>
 <wire x1="18.2" y1="6.4" x2="17.4" y2="6.4" width="0.2" layer="16"/>
 <wire x1="17.4" y1="6.4" x2="16.6" y2="5.6" width="0.2" layer="16"/>
 </signal>
@@ -6801,7 +6830,6 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="ON">
 <contactref element="TPS70933" pad="3"/>
 <contactref element="R11" pad="2"/>
-<contactref element="ATMEGA88PA" pad="11"/>
 <wire x1="34.4" y1="4.2" x2="33.6" y2="4.2" width="0.3" layer="16"/>
 <via x="33.6" y="4.2" extent="1-16" drill="0.3302"/>
 <wire x1="33.6" y1="4.2" x2="33" y2="3.6" width="0.3" layer="1"/>
@@ -6812,19 +6840,22 @@ Please make sure your boards conform to these design rules.</description>
 <via x="25.2" y="0.8" extent="1-16" drill="0.3302"/>
 <wire x1="25.2" y1="0.8" x2="21.6" y2="0.8" width="0.3" layer="16"/>
 <wire x1="21.6" y1="0.8" x2="21.2" y2="1.2" width="0.3" layer="16"/>
-<wire x1="21.2" y1="1.2" x2="21.2" y2="2.5074" width="0.3" layer="16"/>
 <contactref element="C8" pad="1"/>
-<contactref element="R12" pad="1"/>
 <wire x1="36.3" y1="6.85" x2="36.3" y2="5.95" width="0.5" layer="16"/>
 <wire x1="36.3" y1="5.95" x2="35.75" y2="5.2" width="0.5" layer="16"/>
 <wire x1="35.75" y1="5.2" x2="35" y2="5.4" width="0.5" layer="16"/>
 <wire x1="35" y1="5.4" x2="34.45" y2="5.2" width="0.5" layer="16"/>
-<wire x1="35.55" y1="3.8" x2="34.8" y2="3.8" width="0.3" layer="16"/>
 <wire x1="34.8" y1="3.8" x2="34.4" y2="4.2" width="0.3" layer="16"/>
 <wire x1="34.4" y1="4.2" x2="35" y2="4.8" width="0.3" layer="16"/>
 <wire x1="35" y1="4.8" x2="35" y2="5.4" width="0.3" layer="16"/>
 <contactref element="Q2" pad="1"/>
-<wire x1="34.45" y1="5.2" x2="29.55" y2="6.8" width="0" layer="19" extent="16-16"/>
+<contactref element="ONBTN_B" pad="TP"/>
+<contactref element="D1" pad="C"/>
+<contactref element="ATMEGA88PA" pad="19"/>
+<wire x1="33" y1="0.8" x2="36" y2="0.8" width="0" layer="19" extent="1-16"/>
+<wire x1="29.55" y1="6.8" x2="33" y2="3.6" width="0" layer="19" extent="1-16"/>
+<wire x1="15.7074" y1="5.6" x2="21.2" y2="1.2" width="0" layer="19" extent="16-16"/>
+<wire x1="-0.5" y1="-10.8" x2="15.7074" y2="5.6" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="N$7">
 <contactref element="ATMEGA88PA" pad="30"/>
@@ -6914,14 +6945,6 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="25.4" y1="3.2" x2="28.4" y2="3.2" width="0.3" layer="16"/>
 <wire x1="28.4" y1="3.2" x2="30.8" y2="0.8" width="0.3" layer="16"/>
 </signal>
-<signal name="N$59">
-<contactref element="ONBTN" pad="TP"/>
-<contactref element="R12" pad="2"/>
-<wire x1="36" y1="0.8" x2="36" y2="2" width="0.5" layer="16"/>
-<wire x1="36" y1="2" x2="37.2" y2="3.2" width="0.5" layer="16"/>
-<wire x1="37.2" y1="3.2" x2="37.2" y2="3.75" width="0.5" layer="16"/>
-<wire x1="37.2" y1="3.75" x2="37.25" y2="3.8" width="0.5" layer="16"/>
-</signal>
 <signal name="VPP">
 <contactref element="U$2" pad="8"/>
 <contactref element="U$2" pad="7"/>
@@ -6990,79 +7013,22 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="28.6" y1="8.9" x2="26.4" y2="15.35" width="0" layer="19" extent="16-16"/>
 <wire x1="32.94" y1="9.53" x2="28.6" y2="8.9" width="0" layer="19" extent="16-16"/>
 </signal>
+<signal name="N$59">
+<contactref element="ONBTN_A" pad="TP"/>
+<contactref element="R12" pad="1"/>
+<wire x1="-0.25" y1="-14.4" x2="34" y2="0.8" width="0" layer="19" extent="1-16"/>
+</signal>
+<signal name="N$63">
+<contactref element="R12" pad="2"/>
+<contactref element="12V_IN1" pad="TP"/>
+<wire x1="1.45" y1="-14.4" x2="0.6" y2="-19.8" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$64">
+<contactref element="ATMEGA88PA" pad="11"/>
+<contactref element="D1" pad="A"/>
+<wire x1="1.7" y1="-10.8" x2="21.2" y2="2.5074" width="0" layer="19" extent="1-16"/>
+</signal>
 </signals>
-<errors>
-<approved hash="4,1,0b2e15d428220d7a"/>
-<approved hash="4,1,63f615142927b106"/>
-<approved hash="4,1,efc5137c28322ceb"/>
-<approved hash="4,1,3406151c29026fdb"/>
-<approved hash="4,1,ae8415dc2a23e8bd"/>
-<approved hash="4,1,c8dd15042933c90c"/>
-<approved hash="4,1,541f17642a3241a8"/>
-<approved hash="4,1,84cf135c28cf93de"/>
-<approved hash="4,16,6c902b3c16327af1"/>
-<approved hash="4,16,3fad155c29ce1afe"/>
-<approved hash="4,16,c33ea60a2e41cb75"/>
-<approved hash="4,16,4bc82b3c163277c6"/>
-<approved hash="4,16,75e0155c29ce4ad2"/>
-<approved hash="4,16,73e812dc2e224ff6"/>
-<approved hash="7,40,639122d2a2d2e391"/>
-<approved hash="7,40,bf9b7edbfedb3f9b"/>
-<approved hash="7,40,b36a72abf2aa336b"/>
-<approved hash="7,40,1809d84958489808"/>
-<approved hash="7,40,f6d1b610361076d1"/>
-<approved hash="7,40,3351f2907290b351"/>
-<approved hash="4,1,2bfbc6cf5938340c"/>
-<approved hash="4,1,23febecb513c3c09"/>
-<approved hash="4,1,7bfd46c9793ec40a"/>
-<approved hash="4,1,e3fd6ec9613e7c0b"/>
-<approved hash="4,1,6bfd66c9793ff40a"/>
-<approved hash="4,1,e3fd7ec9713e7c0a"/>
-<approved hash="4,1,5bff66cb593ce408"/>
-<approved hash="4,1,23e34ec721303c04"/>
-<approved hash="4,1,2bff46cbd93f3408"/>
-<approved hash="4,1,23fb7ec8d1383c0c"/>
-<approved hash="4,1,23ff46cad13d3408"/>
-<approved hash="4,1,5bf37ed7b9203c14"/>
-<approved hash="4,1,d06f327c0e2dedde"/>
-<approved hash="4,1,d13732c40e15ec46"/>
-<approved hash="4,1,d03f323c0e2decae"/>
-<approved hash="4,1,cb38a60c2647cb73"/>
-<approved hash="4,1,c33cae095e42c377"/>
-<approved hash="4,1,3b3e860aa6419b75"/>
-<approved hash="4,1,833e9e0a8e400375"/>
-<approved hash="4,1,0b3e860a86418b74"/>
-<approved hash="4,1,833e8e0a9e410375"/>
-<approved hash="4,1,1b3ca6088643bb77"/>
-<approved hash="4,1,c330de14ae4fc37b"/>
-<approved hash="4,1,cb3c2608a643cb74"/>
-<approved hash="4,1,c33f2e0c9e47c373"/>
-<approved hash="4,1,fb3cc60aa6421b76"/>
-<approved hash="4,1,833e5e0b4e418375"/>
-<approved hash="4,1,7528151c290248d6"/>
-<approved hash="4,1,75e815dc2a2249f6"/>
-<approved hash="4,1,7388137c28324ec6"/>
-<approved hash="4,1,7728151429264bba"/>
-<approved hash="4,1,75f015d4282249c6"/>
-<approved hash="4,1,77a017642a324836"/>
-<approved hash="4,1,7520150429324ad6"/>
-<approved hash="4,1,73e0135c28ce4ed2"/>
-<approved hash="4,16,d13732c40e15ec46"/>
-<approved hash="4,16,d06f327c0e2dedde"/>
-<approved hash="4,16,d03f323c0e2decae"/>
-<approved hash="4,16,ebff66cb793c740b"/>
-<approved hash="4,16,7bff46cb793fc408"/>
-<approved hash="4,16,23fd4ed6a1213c0a"/>
-<approved hash="4,16,2bfd46c9d93e340a"/>
-<approved hash="4,16,23fd7ec9d13f3c0a"/>
-<approved hash="4,16,033e9e0a8e418374"/>
-<approved hash="4,16,8b3e860a86410b75"/>
-<approved hash="4,16,033c8e089e438377"/>
-<approved hash="4,16,033cce08de430377"/>
-<approved hash="4,16,9b38a60c4647fb73"/>
-<approved hash="4,16,75e80bdc374249d6"/>
-<approved hash="4,16,77a0171c280e4bd2"/>
-</errors>
 </board>
 </drawing>
 <compatibility>
