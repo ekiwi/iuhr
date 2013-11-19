@@ -42888,6 +42888,10 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <part name="R6" library="resistor" deviceset="R-EU_" device="R0603" value="33"/>
 <part name="R7" library="resistor" deviceset="R-EU_" device="R0603" value="33"/>
 <part name="R8" library="resistor" deviceset="R-EU_" device="R0603" value="33"/>
+<part name="P+7" library="supply1" deviceset="VCC" device=""/>
+<part name="GND21" library="supply1" deviceset="GND" device=""/>
+<part name="+5V" library="testpad" deviceset="TP" device="TP15SQ"/>
+<part name="GND" library="testpad" deviceset="TP" device="TP15SQ"/>
 </parts>
 <sheets>
 <sheet>
@@ -43050,6 +43054,10 @@ EN not inverted</text>
 <instance part="R6" gate="G$1" x="215.9" y="-109.22"/>
 <instance part="R7" gate="G$1" x="215.9" y="-127"/>
 <instance part="R8" gate="G$1" x="215.9" y="-144.78"/>
+<instance part="P+7" gate="VCC" x="175.26" y="76.2" rot="MR0"/>
+<instance part="GND21" gate="1" x="175.26" y="53.34" rot="MR0"/>
+<instance part="+5V" gate="G$1" x="175.26" y="68.58" rot="R180"/>
+<instance part="GND" gate="G$1" x="175.26" y="60.96"/>
 </instances>
 <busses>
 <bus name="DIGIT[0..7]">
@@ -43195,6 +43203,11 @@ EN not inverted</text>
 <pinref part="D2" gate="G$1" pin="A"/>
 <wire x1="241.3" y1="91.44" x2="241.3" y2="88.9" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="GND21" gate="1" pin="GND"/>
+<pinref part="GND" gate="G$1" pin="TP"/>
+<wire x1="175.26" y1="55.88" x2="175.26" y2="58.42" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="VCC" class="0">
 <segment>
@@ -43256,6 +43269,11 @@ EN not inverted</text>
 <pinref part="R14" gate="G$1" pin="2"/>
 <wire x1="241.3" y1="116.84" x2="241.3" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="P+6" gate="VCC" pin="VCC"/>
+</segment>
+<segment>
+<pinref part="P+7" gate="VCC" pin="VCC"/>
+<pinref part="+5V" gate="G$1" pin="TP"/>
+<wire x1="175.26" y1="71.12" x2="175.26" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RESET" class="0">
