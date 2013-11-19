@@ -23,16 +23,16 @@
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
@@ -47,7 +47,7 @@
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
 <layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
@@ -190,8 +190,8 @@
 <text x="25.2" y="21.4" size="1.27" layer="25">D0</text>
 <text x="25.8" y="0.6" size="1.27" layer="25">D7</text>
 <text x="38.2" y="2.4" size="0.8128" layer="26" rot="MR0">ON</text>
-<text x="38.2" y="21.4" size="0.8128" layer="26" rot="MR0">+12V</text>
-<text x="38" y="12.8" size="0.8128" layer="26" rot="MR0">GND</text>
+<text x="38" y="13.8" size="0.8128" layer="26" rot="MR0">+12V</text>
+<text x="37.8" y="22" size="0.8128" layer="26" rot="MR0">GND</text>
 <text x="26.4" y="19" size="0.8128" layer="26" rot="MR0">Encoder</text>
 <wire x1="21" y1="22.2" x2="21" y2="20.2" width="0.3" layer="26" style="shortdash"/>
 <wire x1="21" y1="20.2" x2="21.8" y2="19.4" width="0.3" layer="26" style="shortdash"/>
@@ -5685,7 +5685,6 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="VALUE" x="32.968" y="2.911" size="1.27" layer="28" rot="MR90"/>
 </element>
 <element name="C4" library="resistor" package="C0805" value="1uF" x="36.2" y="10.4" smashed="yes" rot="MR180">
-<attribute name="NAME" x="37.711" y="10.784" size="0.8128" layer="26" rot="MR180"/>
 <attribute name="VALUE" x="35.311" y="12.686" size="1.27" layer="28" rot="MR180"/>
 </element>
 <element name="C6" library="resistor" package="C0805" value="2.2uF" x="31" y="5.6" smashed="yes" rot="MR270">
@@ -5736,7 +5735,6 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="VALUE" x="38.416" y="19.657" size="0.0254" layer="28" rot="MR0"/>
 </element>
 <element name="C11" library="resistor" package="C0603" value="100n" x="36.2" y="12.6" smashed="yes" rot="MR180">
-<attribute name="NAME" x="34.911" y="14.838" size="0.8128" layer="26" rot="MR180"/>
 <attribute name="VALUE" x="35.311" y="14.632" size="1.27" layer="28" rot="MR180"/>
 </element>
 <element name="C13" library="resistor" package="PANASONIC_E" value="100u" x="32.6" y="18.6" rot="MR180"/>
@@ -5760,10 +5758,13 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="VALUE" x="35.432" y="4.689" size="1.27" layer="28" rot="MR270"/>
 </element>
 <element name="IRF7416" library="ShortCircuitRobotics" package="SO8-2" value="IRF7416" x="30.8" y="10.6" smashed="yes" rot="MR270">
-<attribute name="NAME" x="29.4792" y="13.714" size="0.8128" layer="26" font="vector" ratio="10" rot="MR270"/>
+<attribute name="NAME" x="30.6792" y="13.714" size="0.8128" layer="26" font="vector" ratio="10" rot="MR270"/>
 <attribute name="VALUE" x="32.705" y="8.314" size="1.27" layer="28" font="vector" ratio="10" rot="MR270"/>
 </element>
-<element name="R13" library="resistor" package="R0603" value="10k" x="24.4" y="16" rot="MR90"/>
+<element name="R13" library="resistor" package="R0603" value="10k" x="24.4" y="16" smashed="yes" rot="MR90">
+<attribute name="NAME" x="22.289" y="15.311" size="1.016" layer="26" rot="MR90"/>
+<attribute name="VALUE" x="22.368" y="15.111" size="1.27" layer="28" rot="MR90"/>
+</element>
 <element name="Q2" library="SparkFun" package="SOT23-3" value="MOSFET-NCHANNELSMD" x="27" y="15.4" rot="MR0"/>
 <element name="D1" library="diode" package="SOD323-R" value="" x="31.8" y="1.8" smashed="yes" rot="MR90">
 <attribute name="IDENTIFIER" value="1N4148-WS" x="31.8" y="1.8" size="1.778" layer="28" rot="MR90" display="off"/>
