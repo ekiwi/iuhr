@@ -42854,7 +42854,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <part name="H2" library="holes" deviceset="MOUNT-HOLE" device="2.8"/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
 <part name="LOGO1" library="ea" deviceset="OSHW_LOGO_8MIL" device="X0200-NT"/>
-<part name="PB7" library="testpad" deviceset="TP" device="TP15SQ"/>
+<part name="PD5" library="testpad" deviceset="TP" device="TP15SQ"/>
 <part name="C7" library="resistor" deviceset="C-EU" device="C0603" value="100nF"/>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
 <part name="C8" library="resistor" deviceset="C-EU" device="C0603" value="tbd"/>
@@ -43013,7 +43013,7 @@ EN not inverted</text>
 <instance part="H2" gate="G$1" x="218.44" y="63.5"/>
 <instance part="GND16" gate="1" x="68.58" y="-116.84"/>
 <instance part="LOGO1" gate="G$1" x="208.28" y="43.18"/>
-<instance part="PB7" gate="G$1" x="101.6" y="132.08" rot="MR270"/>
+<instance part="PD5" gate="G$1" x="182.88" y="116.84" rot="MR90"/>
 <instance part="C7" gate="G$1" x="177.8" y="-30.48"/>
 <instance part="GND17" gate="1" x="177.8" y="-40.64"/>
 <instance part="C8" gate="G$1" x="93.98" y="35.56"/>
@@ -43039,10 +43039,10 @@ EN not inverted</text>
 <attribute name="NAME" x="38.1" y="63.5" size="1.778" layer="95"/>
 <attribute name="VALUE" x="38.1" y="60.96" size="1.778" layer="96"/>
 </instance>
-<instance part="D1" gate="G$1" x="208.28" y="116.84">
-<attribute name="IDENTIFIER" x="208.28" y="116.84" size="1.778" layer="96" display="off"/>
-<attribute name="#REICHELT" x="201.93" y="110.49" size="1.27" layer="96" display="both"/>
-<attribute name="U_D1" x="201.93" y="113.03" size="1.27" layer="96" display="both"/>
+<instance part="D1" gate="G$1" x="215.9" y="116.84">
+<attribute name="IDENTIFIER" x="215.9" y="116.84" size="1.778" layer="96" display="off"/>
+<attribute name="#REICHELT" x="209.55" y="110.49" size="1.27" layer="96" display="both"/>
+<attribute name="U_D1" x="209.55" y="113.03" size="1.27" layer="96" display="both"/>
 </instance>
 <instance part="R12" gate="G$1" x="231.14" y="142.24" rot="R90"/>
 <instance part="P+5" gate="1" x="231.14" y="157.48"/>
@@ -43973,7 +43973,7 @@ EN not inverted</text>
 <pinref part="D1" gate="G$1" pin="C"/>
 <wire x1="231.14" y1="116.84" x2="231.14" y2="111.76" width="0.1524" layer="91"/>
 <junction x="231.14" y="116.84"/>
-<wire x1="210.82" y1="116.84" x2="220.98" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="116.84" x2="220.98" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="220.98" y1="116.84" x2="231.14" y2="116.84" width="0.1524" layer="91"/>
 <junction x="220.98" y="116.84"/>
 <pinref part="ATMEGA88PA" gate="1" pin="PD7(AIN1/PCINT23)"/>
@@ -44026,8 +44026,12 @@ EN not inverted</text>
 <net name="N$58" class="0">
 <segment>
 <pinref part="ATMEGA88PA" gate="1" pin="PB7(XTAL2/TOSC2/PCINT7)"/>
-<pinref part="PB7" gate="G$1" pin="TP"/>
-<wire x1="104.14" y1="132.08" x2="111.76" y2="132.08" width="0.1524" layer="91"/>
+<pinref part="D1" gate="G$1" pin="A"/>
+<wire x1="106.68" y1="132.08" x2="111.76" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="116.84" x2="208.28" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="116.84" x2="208.28" y2="167.64" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="167.64" x2="106.68" y2="167.64" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="167.64" x2="106.68" y2="132.08" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VPP" class="0">
@@ -44118,13 +44122,6 @@ EN not inverted</text>
 <wire x1="231.14" y1="134.62" x2="231.14" y2="137.16" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$56" class="0">
-<segment>
-<pinref part="ATMEGA88PA" gate="1" pin="PD5(T1/OC0B/PCINT21)"/>
-<wire x1="172.72" y1="116.84" x2="205.74" y2="116.84" width="0.1524" layer="91"/>
-<pinref part="D1" gate="G$1" pin="A"/>
-</segment>
-</net>
 <net name="N$57" class="0">
 <segment>
 <wire x1="226.06" y1="114.3" x2="226.06" y2="101.6" width="0.1524" layer="91"/>
@@ -44136,6 +44133,13 @@ EN not inverted</text>
 <pinref part="ATMEGA88PA" gate="1" pin="PD6(AIN0/OC0A/PCINT22)"/>
 <wire x1="172.72" y1="114.3" x2="226.06" y2="114.3" width="0.1524" layer="91"/>
 <junction x="241.3" y="101.6"/>
+</segment>
+</net>
+<net name="N$56" class="0">
+<segment>
+<pinref part="ATMEGA88PA" gate="1" pin="PD5(T1/OC0B/PCINT21)"/>
+<pinref part="PD5" gate="G$1" pin="TP"/>
+<wire x1="180.34" y1="116.84" x2="172.72" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
