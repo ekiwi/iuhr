@@ -182,14 +182,15 @@
 <wire x1="12.6" y1="20.4" x2="11.6" y2="19.4" width="0.3" layer="21" style="shortdash"/>
 <wire x1="11.6" y1="19.4" x2="10.6" y2="19.4" width="0.3" layer="21" style="shortdash"/>
 <text x="10.2" y="19.6" size="1.4224" layer="25" rot="R180">G</text>
-<wire x1="24.6" y1="22" x2="24.6" y2="20.2" width="0.3" layer="21" style="shortdash"/>
-<wire x1="24.6" y1="20.2" x2="23.8" y2="19.4" width="0.3" layer="21" style="shortdash"/>
-<text x="23.6" y="20" size="1.4224" layer="25" rot="R180">E</text>
+<wire x1="24.6" y1="22" x2="24.6" y2="20" width="0.3" layer="21" style="shortdash"/>
+<wire x1="24.6" y1="20" x2="24" y2="19.4" width="0.3" layer="21" style="shortdash"/>
+<wire x1="24" y1="19.4" x2="23.4" y2="19.4" width="0.3" layer="21" style="shortdash"/>
+<text x="23" y="20" size="1.4224" layer="25" rot="R180">E</text>
 <wire x1="18.6" y1="20.4" x2="19.6" y2="19.4" width="0.3" layer="21" style="shortdash"/>
-<wire x1="19.6" y1="19.4" x2="22" y2="19.4" width="0.3" layer="21"/>
-<text x="25.2" y="21.4" size="1.27" layer="25">D0</text>
+<wire x1="19.6" y1="19.4" x2="21.2" y2="19.4" width="0.3" layer="21"/>
+<text x="23.8" y="17.6" size="1.27" layer="25">D0</text>
 <text x="25.8" y="0.6" size="1.27" layer="25">D7</text>
-<text x="38.2" y="2.4" size="0.8128" layer="26" rot="MR0">ON</text>
+<text x="38" y="6.6" size="0.8128" layer="26" rot="MR270">ON</text>
 <text x="38" y="13.8" size="0.8128" layer="26" rot="MR0">+12V</text>
 <text x="37.8" y="22" size="0.8128" layer="26" rot="MR0">GND</text>
 <text x="26.4" y="19" size="0.8128" layer="26" rot="MR0">Encoder</text>
@@ -5688,7 +5689,7 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="VALUE" x="35.311" y="12.686" size="1.27" layer="28" rot="MR180"/>
 </element>
 <element name="C6" library="resistor" package="C0805" value="2.2uF" x="31" y="5.6" smashed="yes" rot="MR270">
-<attribute name="NAME" x="30.384" y="8.289" size="0.8128" layer="26" rot="MR180"/>
+<attribute name="NAME" x="32.584" y="7.889" size="0.8128" layer="26" rot="MR180"/>
 <attribute name="VALUE" x="33.286" y="6.489" size="1.27" layer="28" rot="MR270"/>
 </element>
 <element name="RX" library="testpad" package="TP15SQ" value="TPTP15SQ" x="16" y="22.2" smashed="yes" rot="MR0">
@@ -5715,7 +5716,7 @@ Please make sure your boards conform to these design rules.</description>
 </element>
 <element name="Q1" library="rca_sontiges" package="XO32" value="20.000MHz" x="28.4" y="6.4" smashed="yes" rot="MR270">
 <attribute name="REICHELT#" value="XO32 20,00000" x="32.21" y="-36.78" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="NAME" x="27.9" y="8.5" size="0.8128" layer="26" rot="MR0"/>
+<attribute name="NAME" x="31.3" y="7.7" size="0.8128" layer="26" rot="MR0"/>
 <attribute name="VALUE" x="30.5" y="2.9" size="1.27" layer="28" rot="MR0"/>
 </element>
 <element name="ONBTN_B" library="testpad" package="TP15SQ" value="TPTP15SQ" x="37.6" y="4" smashed="yes" rot="MR0">
@@ -5746,7 +5747,7 @@ Please make sure your boards conform to these design rules.</description>
 <element name="LOGO1" library="ea" package="OSHW_8X200_NOTEXT" value="OSHW_LOGO_8MILX0200-NT" x="10" y="14"/>
 <element name="PD5" library="testpad" package="TP15SQ" value="TPTP15SQ" x="20.4" y="0.8" smashed="yes" rot="MR0">
 <attribute name="TP_SIGNAL_NAME" value="" x="20.4" y="-1.74" size="1" layer="38" rot="MR0"/>
-<attribute name="NAME" x="20.7501" y="4.0001" size="0.8128" layer="26" rot="MR270"/>
+<attribute name="NAME" x="16.9501" y="1.4001" size="0.8128" layer="26" rot="MR180"/>
 <attribute name="VALUE" x="21.162" y="-0.089" size="0.0254" layer="28" rot="MR0"/>
 </element>
 <element name="C7" library="resistor" package="C0603" value="100nF" x="21.8" y="4.4" smashed="yes" rot="R180">
@@ -5785,14 +5786,36 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="NAME" x="24.089" y="1.761" size="0.8128" layer="26" rot="MR90"/>
 <attribute name="VALUE" x="23.768" y="2.161" size="1.27" layer="28" rot="MR90"/>
 </element>
-<element name="R1" library="resistor" package="R0603" value="33" x="27" y="21.2" rot="R90"/>
-<element name="R2" library="resistor" package="R0603" value="33" x="27" y="18.2" rot="R90"/>
-<element name="R3" library="resistor" package="R0603" value="33" x="27.2" y="15.2" rot="R90"/>
-<element name="R4" library="resistor" package="R0603" value="33" x="26.4" y="9.4" rot="R45"/>
-<element name="R5" library="resistor" package="R0603" value="33" x="26.4" y="7.35"/>
-<element name="R6" library="resistor" package="R0603" value="33" x="26.5" y="5.8"/>
-<element name="R7" library="resistor" package="R0603" value="33" x="27.2" y="3.6" rot="R270"/>
-<element name="R8" library="resistor" package="R0603" value="33" x="24" y="4.4" rot="R270"/>
+<element name="R1" library="resistor" package="R0603" value="33" x="27" y="21.2" smashed="yes" rot="R90">
+<attribute name="VALUE" x="29.032" y="20.311" size="1.27" layer="27" rot="R90"/>
+</element>
+<element name="R2" library="resistor" package="R0603" value="33" x="27" y="18.2" smashed="yes" rot="R90">
+<attribute name="VALUE" x="29.032" y="17.311" size="1.27" layer="27" rot="R90"/>
+</element>
+<element name="R3" library="resistor" package="R0603" value="33" x="27.2" y="15.2" smashed="yes" rot="R90">
+<attribute name="NAME" x="25.911" y="13.711" size="0.8128" layer="25" rot="R90"/>
+<attribute name="VALUE" x="29.232" y="14.311" size="1.27" layer="27" rot="R90"/>
+</element>
+<element name="R4" library="resistor" package="R0603" value="33" x="26.4" y="9.4" smashed="yes" rot="R45">
+<attribute name="NAME" x="26.1427625" y="11" size="0.8128" layer="25" rot="R45"/>
+<attribute name="VALUE" x="27.208221875" y="7.334540625" size="1.27" layer="27" rot="R45"/>
+</element>
+<element name="R5" library="resistor" package="R0603" value="33" x="26.4" y="7.35" smashed="yes">
+<attribute name="NAME" x="24.711" y="7.639" size="0.8128" layer="25" rot="R90"/>
+<attribute name="VALUE" x="25.511" y="5.318" size="1.27" layer="27"/>
+</element>
+<element name="R6" library="resistor" package="R0603" value="33" x="26.5" y="5.8" smashed="yes">
+<attribute name="NAME" x="24.811" y="6.089" size="0.8128" layer="25" rot="R90"/>
+<attribute name="VALUE" x="25.611" y="3.768" size="1.27" layer="27"/>
+</element>
+<element name="R7" library="resistor" package="R0603" value="33" x="27.2" y="3.6" smashed="yes" rot="R270">
+<attribute name="NAME" x="25.289" y="3.489" size="0.8128" layer="25" rot="R270"/>
+<attribute name="VALUE" x="25.168" y="4.489" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="R8" library="resistor" package="R0603" value="33" x="24" y="4.4" smashed="yes" rot="R270">
+<attribute name="NAME" x="25.289" y="5.089" size="0.8128" layer="25" rot="R270"/>
+<attribute name="VALUE" x="21.968" y="5.289" size="1.27" layer="27" rot="R270"/>
+</element>
 <element name="+5V" library="testpad" package="TP15SQ" value="TPTP15SQ" x="3.4" y="22.2" smashed="yes" rot="MR0">
 <attribute name="TP_SIGNAL_NAME" value="" x="3.4" y="19.66" size="1" layer="38" rot="MR0"/>
 <attribute name="NAME" x="2.1501" y="21.6001" size="0.8128" layer="26" rot="MR0"/>
