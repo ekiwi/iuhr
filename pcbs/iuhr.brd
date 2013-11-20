@@ -23,16 +23,16 @@
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
@@ -47,7 +47,7 @@
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
 <layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
@@ -5857,16 +5857,10 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="14.8" y1="7.2" x2="14.4" y2="7.6" width="0.3" layer="16"/>
 <wire x1="14.4" y1="7.6" x2="14.4" y2="7.65" width="0.3" layer="16"/>
 <wire x1="14.4" y1="7.65" x2="13.6" y2="8.65" width="0.3" layer="16"/>
-<wire x1="11.6" y1="7.8" x2="12.4" y2="8.6" width="0.5" layer="16"/>
-<wire x1="12.4" y1="8.6" x2="12.6" y2="8.6" width="0.5" layer="16"/>
-<wire x1="12.6" y1="8.6" x2="13.35" y2="8.6" width="0.5" layer="16"/>
 <wire x1="13.35" y1="8.6" x2="13.6" y2="8.65" width="0.5" layer="16"/>
 <wire x1="11.6" y1="7.8" x2="10" y2="7.8" width="0.3" layer="16"/>
 <wire x1="10" y1="7.8" x2="8.2" y2="9.6" width="0.3" layer="16"/>
 <via x="8.2" y="9.6" extent="1-16" drill="0.3302"/>
-<wire x1="13.6" y1="5.65" x2="12.75" y2="5.65" width="0.5" layer="16"/>
-<wire x1="12.75" y1="5.65" x2="12.6" y2="5.8" width="0.5" layer="16"/>
-<wire x1="12.6" y1="5.8" x2="12.6" y2="8.6" width="0.5" layer="16"/>
 <polygon width="0.2" layer="1" isolate="0.3">
 <vertex x="0" y="23"/>
 <vertex x="38.4" y="23"/>
@@ -5901,7 +5895,6 @@ Please make sure your boards conform to these design rules.</description>
 <via x="12.2" y="12" extent="1-16" drill="0.3302"/>
 <via x="12.2" y="10.4" extent="1-16" drill="0.3302"/>
 <via x="13.8" y="10.4" extent="1-16" drill="0.3302"/>
-<via x="13" y="9.6" extent="1-16" drill="0.3302"/>
 <via x="9" y="8.8" extent="1-16" drill="0.3302"/>
 <via x="9.8" y="8" extent="1-16" drill="0.3302"/>
 <via x="8.2" y="8" extent="1-16" drill="0.3302"/>
@@ -5945,12 +5938,6 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="34.6" y1="8.6" x2="35" y2="8.2" width="0.5" layer="16"/>
 <wire x1="35" y1="8.2" x2="35" y2="7" width="0.5" layer="16"/>
 <wire x1="35" y1="7" x2="34.8" y2="6.8" width="0.5" layer="16"/>
-<polygon width="0.2" layer="16" isolate="0.3">
-<vertex x="0" y="23"/>
-<vertex x="38.4" y="23"/>
-<vertex x="38.4" y="0"/>
-<vertex x="0" y="0"/>
-</polygon>
 <wire x1="15.2" y1="17" x2="17" y2="17" width="1" layer="16"/>
 <wire x1="17" y1="17" x2="18.6" y2="18.6" width="1" layer="16"/>
 <wire x1="18.6" y1="18.6" x2="20.8" y2="18.6" width="1" layer="16"/>
@@ -5990,6 +5977,24 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="5.2" y1="22" x2="6.6" y2="22.2" width="0.3" layer="16"/>
 <wire x1="5" y1="19.2" x2="5" y2="21.8" width="0.3" layer="16"/>
 <wire x1="5" y1="21.8" x2="6.6" y2="22.2" width="0.3" layer="16"/>
+<wire x1="13.6" y1="8.65" x2="13.25" y2="8.65" width="0.2" layer="16"/>
+<wire x1="13.25" y1="8.65" x2="12.8" y2="8.2" width="0.2" layer="16"/>
+<wire x1="12.8" y1="8.2" x2="12.8" y2="6" width="0.2" layer="16"/>
+<wire x1="12.8" y1="6" x2="13" y2="5.8" width="0.2" layer="16"/>
+<wire x1="13" y1="5.8" x2="13.45" y2="5.8" width="0.2" layer="16"/>
+<wire x1="13.45" y1="5.8" x2="13.6" y2="5.65" width="0.2" layer="16"/>
+<polygon width="0.2" layer="16" isolate="0.3">
+<vertex x="0" y="23"/>
+<vertex x="38.4" y="23"/>
+<vertex x="38.4" y="0"/>
+<vertex x="13" y="0"/>
+<vertex x="13" y="9.2"/>
+<vertex x="14.6" y="9.2"/>
+<vertex x="14.6" y="9.6"/>
+<vertex x="12.4" y="9.6"/>
+<vertex x="12.4" y="0"/>
+<vertex x="0" y="0"/>
+</polygon>
 </signal>
 <signal name="VCC">
 <contactref element="ATMEGA88PA" pad="4"/>
@@ -7107,6 +7112,9 @@ Please make sure your boards conform to these design rules.</description>
 <approved hash="7,40,fefff607f637fecf"/>
 <approved hash="7,40,451a29b6b550f284"/>
 <approved hash="7,40,2473a23c15d3b8e4"/>
+<approved hash="4,1,d06f327c0e2dedde"/>
+<approved hash="4,1,d03f323c0e2decae"/>
+<approved hash="4,1,d13732c40e15ec46"/>
 <approved hash="4,1,2bfbc6cf5938340c"/>
 <approved hash="4,1,23febecb513c3c09"/>
 <approved hash="4,1,7bfd46c9793ec40a"/>
@@ -7119,9 +7127,6 @@ Please make sure your boards conform to these design rules.</description>
 <approved hash="4,1,23fb7ec8d1383c0c"/>
 <approved hash="4,1,23ff46cad13d3408"/>
 <approved hash="4,1,5bf37ed7b9203c14"/>
-<approved hash="4,1,d06f327c0e2dedde"/>
-<approved hash="4,1,d13732c40e15ec46"/>
-<approved hash="4,1,d03f323c0e2decae"/>
 <approved hash="4,1,cb38a60c2647cb73"/>
 <approved hash="4,1,c33cae095e42c377"/>
 <approved hash="4,1,3b3e860aa6419b75"/>
@@ -7142,8 +7147,8 @@ Please make sure your boards conform to these design rules.</description>
 <approved hash="4,1,77a017642a324836"/>
 <approved hash="4,1,7728151429264bba"/>
 <approved hash="4,1,7388137c28324ec6"/>
-<approved hash="4,16,d06f327c0e2dedde"/>
 <approved hash="4,16,d13732c40e15ec46"/>
+<approved hash="4,16,d06f327c0e2dedde"/>
 <approved hash="4,16,d03f323c0e2decae"/>
 <approved hash="4,16,e3fd46c9613e640a"/>
 <approved hash="4,16,63fb46cfa138640c"/>
@@ -7159,30 +7164,30 @@ Please make sure your boards conform to these design rules.</description>
 <approved hash="6,16,5beeceb6a758bef8"/>
 <approved hash="6,16,4faee8cc39ca4f23"/>
 <approved hash="6,16,ca51d2ad30219d1a"/>
-<approved hash="6,16,144137c343ee626e"/>
 <approved hash="6,16,4070747f7668532c"/>
+<approved hash="6,16,144137c343ee626e"/>
 <approved hash="6,16,d5f2c7f2178b058b"/>
 <approved hash="6,16,b7c8b6ac51863d2b"/>
-<approved hash="6,16,173edde4ed492793"/>
 <approved hash="6,16,06ff7cdd98b7e295"/>
+<approved hash="6,16,173edde4ed492793"/>
 <approved hash="6,16,bd1e1372f192bbd4"/>
-<approved hash="6,16,0bded04025efc289"/>
 <approved hash="6,16,cd31f9cb8bde279e"/>
+<approved hash="6,16,0bded04025efc289"/>
 <approved hash="6,16,1e1cd07ebed12338"/>
-<approved hash="6,16,5c6fea0b55daebbc"/>
 <approved hash="6,16,f51ff6f347175f91"/>
+<approved hash="6,16,5c6fea0b55daebbc"/>
 <approved hash="6,16,791c5526da9b371d"/>
 <approved hash="6,16,95dd25b82d2c9d49"/>
 <approved hash="6,16,da1b8ebeb6e854c8"/>
-<approved hash="6,16,56600baede780aca"/>
-<approved hash="6,16,525987a8fc3393cc"/>
 <approved hash="6,16,d3c07efbfe279d43"/>
+<approved hash="6,16,525987a8fc3393cc"/>
 <approved hash="6,16,7404516673b34c3f"/>
+<approved hash="6,16,56600baede780aca"/>
 <approved hash="6,16,dea038b151b12418"/>
-<approved hash="4,16,4bc82b3c163277c6"/>
 <approved hash="4,16,75a815142a0649da"/>
-<approved hash="4,16,c67085e4b82bf53f"/>
+<approved hash="4,16,4bc82b3c163277c6"/>
 <approved hash="4,16,cf408c34b02bf3df"/>
+<approved hash="4,16,c67085e4b82bf53f"/>
 </errors>
 </board>
 </drawing>
