@@ -14,3 +14,7 @@
 *.net
 *.raw
 
+# XPCC #
+########
+.sconsign.dblite
+build/
