@@ -45,21 +45,40 @@ MAIN_FUNCTION
 
 	GpioOutputD5::setOutput(xpcc::Gpio::Low);
 
-	buffer[2] = 0xff; // B0
+	// square wave at D5
+	//TCCR0A = (1<<COM0B1) | (1<<WGM00) | (1<<WGM01);
+	//TCCR0B = (1<<CS01) | (1<<CS00) | (1<<WGM02);
 
-	GpioOutputD5::set();
-	Tlc5951::writeGrayscale(buffer);
-	Tlc5951::latch();
-	GpioOutputD5::reset();
+
+	const uint8_t x = 2;
+	buffer[x] = 0xff;
+	buffer[x+3] = 0xff;
+	buffer[x+6] = 0xff;
+	buffer[x+9] = 0xff;
+	buffer[x+12] = 0xff;
+	buffer[x+15] = 0xff;
+	buffer[x+19] = 0xff;
+	buffer[x+21] = 0xff;
+
+
+	//Tlc5951::writeGrayscale(buffer);
+	//Tlc5951::latch();
+
 
 	XPCC_LOG_DEBUG<< "Set B0 to 0xff" << xpcc::endl;
 
 
 
+	uint8_t row = 0;
 	while (1)
 	{
-		//GpioOutputD5::toggle();
-		xpcc::delay_ms(1);
+		//RowPort::write(~(1<<row));
+		//++row;
+		//row = (row > 4)? 0 : row;
+
+		GpioOutputD5::toggle();
+
+		xpcc::delay_us(100);
 	}
 
 	return 0;

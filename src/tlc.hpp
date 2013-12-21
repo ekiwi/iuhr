@@ -105,7 +105,7 @@ public:
 			}
 		} else { // when called with a NULL pointer => clear all channels
 			for(uint8_t ii = 0; ii < 36; ++ii) {
-				Spi::writeBlocking(0);
+				Spi::writeBlocking(0x00);
 			}
 		}
 
@@ -137,9 +137,10 @@ public:
 						static_cast<uint8_t>(AutoDisplayRepeatMode::Enable) |
 						static_cast<uint8_t>(DisplayTimingResetMode::Disable) |
 						static_cast<uint8_t>(GrayscaleCounterMode::Bit12);
-		static constexpr uint8_t GlobalBrightnessBlue  = 0xff;
-		static constexpr uint8_t GlobalBrightnessGreen = 0xff;
-		static constexpr uint8_t GlobalBrightnessRed   = 0x00;
+		// We really do not want to kill our 500mA rated power supply...
+		static constexpr uint8_t GlobalBrightnessBlue  = 0x4f;
+		static constexpr uint8_t GlobalBrightnessGreen = 0x4f;
+		static constexpr uint8_t GlobalBrightnessRed   = 0x4f;
 
 		Gslat::set();
 
@@ -181,7 +182,7 @@ public:
 		}
 		// Red Channels
 		for(uint8_t ii = 0; ii < 7; ++ii) {
-			Spi::writeBlocking(0);
+			Spi::writeBlocking(0xff);
 		}
 		// wait for last transfer to finish
 		while(!Spi::isFinished())
