@@ -96,7 +96,7 @@ public:
 					Spi::writeBlocking((buffer >> 4) & 0xff);
 					shared = (buffer & 0x0f) << 4;
 				} else {
-					shared |= (buffer >> 4) & 0xf0;
+					shared |= (buffer >> 8) & 0x0f;
 					Spi::writeBlocking(shared);
 					Spi::writeBlocking(buffer & 0xff);
 				}
