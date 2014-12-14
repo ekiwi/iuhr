@@ -3,6 +3,8 @@
 #include <xpcc/processing.hpp>
 #include <xpcc/ui/led/tables.hpp>
 
+using namespace xpcc::atmega;	// TODO: remove
+
 class Tlc5951
 {
 	typedef ::xpcc::atmega::SpiMaster Spi;
@@ -61,7 +63,9 @@ class Tlc5951
 
 public:
 
-	static inline void initialize()
+	template< class clockSource, uint32_t baudrate>
+	static inline void
+	initialize()
 	{
 		// Init Pins
 		Gslat::setOutput(xpcc::Gpio::Low);
@@ -70,7 +74,7 @@ public:
 		GpioOutputB3::connect(Spi::Mosi);
 		GpioInputB4::connect(Spi::Miso);
 		GpioOutputB5::connect(Spi::Sck);
-		Spi::initialize<xpcc::avr::SystemClock, 1250000>();
+		Spi::initialize<clockSource, baudrate>();
 		Spi::setDataMode(Spi::DataMode::Mode0);
 		XPCC_LOG_DEBUG<< "Spi initialized" << xpcc::endl;
 		// initialize Control

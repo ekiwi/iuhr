@@ -1,11 +1,9 @@
 // coding: utf-8
 #include <xpcc/architecture.hpp>
-using namespace xpcc::atmega;
-
 
 // Serial debug
 #include <xpcc/io/iodevice_wrapper.hpp>
-typedef Uart0 Uart;
+typedef xpcc::atmega::Uart0 Uart;
 xpcc::IODeviceWrapper<Uart> logger;
 
 #include <xpcc/debug/logger.hpp>
@@ -14,15 +12,25 @@ xpcc::log::Logger xpcc::log::info(logger);
 xpcc::log::Logger xpcc::log::warning(logger);
 xpcc::log::Logger xpcc::log::error(logger);
 
+
+// Settings
 #undef	XPCC_LOG_LEVEL
 #define	XPCC_LOG_LEVEL xpcc::log::DEBUG
+static constexpr size_t Digits   = 5;
+static constexpr size_t Segments = 7;
+
 
 // TLC5951
-#include "tlc.hpp"
+#include "xpcc/tlc.hpp"
+#include "iuhr/display.hpp"
 
-uint8_t buffer[24];
 
-typedef GpioPort<GpioOutputC0, 6> RowPort;
+using namespace xpcc::atmega;
+static constexpr size_t Rows = Digits + 1;	// One additional Row for the dots
+typedef Tlc5951 Tlc;	// TODO: hand Spi and Pins to Tlc
+typedef GpioPort<GpioOutputC0, Rows> RowPort;
+typedef iuhr::Display<Tlc, RowPort, Segments> Display;
+
 
 MAIN_FUNCTION
 {
@@ -45,47 +53,21 @@ MAIN_FUNCTION
 	xpcc::atmega::enableInterrupts();
 	XPCC_LOG_INFO << "iUhr 0.1 says hello...." << xpcc::endl;
 
-	RowPort::write(~(1<<1)); // turn rows off except for digit 1 by default
-	RowPort::setOutput();
-	XPCC_LOG_DEBUG<< "RowPort initialized" << xpcc::endl;
-
-	Tlc5951::initialize();
-	XPCC_LOG_DEBUG<< "Tlc5951 initialized" << xpcc::endl;
+	Display::initialize<xpcc::avr::SystemClock, 1250000>();
+	Display::setPixel(0xff, 0, 0);
+	Display::setPixel(0xff, 0, 1);
+	Display::setPixel(0xff, 0, 2);
+//	Display::swapBuffer();
 
 	// square wave at D5
 	//TCCR0A = (1<<COM0B1) | (1<<WGM00) | (1<<WGM01);
 	//TCCR0B = (1<<CS01) | (1<<CS00) | (1<<WGM02);
 
 
-//	const uint8_t x = 0;
-//	buffer[x] = 0xff;
-//	buffer[x+3] = 0xff;
-//	buffer[x+6] = 0xff;
-//	buffer[x+9] = 0xff;
-//	buffer[x+12] = 0xff;
-//	buffer[x+15] = 0xff;
-//	buffer[x+18] = 0xff;
-//	buffer[x+21] = 0xff;
-
-	buffer[0] = 0xff;
-
-
-	Tlc5951::writeGrayscale(buffer);
-	Tlc5951::latch();
-
-
-	uint8_t row = 0;
 	while (1)
 	{
-//		Tlc5951::writeGrayscale(buffer);
-		RowPort::write(0xff);
-//		Tlc5951::latch();
-		RowPort::write(~(1<<row));
-		++row;
-		row = (row > 5)? 0 : row;
-
-//		GpioOutputD5::toggle();
-
+		GpioOutputD5::toggle();
+		Display::displayNextRow();
 		xpcc::delayMicroseconds(100);
 	}
 
