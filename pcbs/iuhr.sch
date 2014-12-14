@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -42874,7 +42874,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <attribute name="IDENTIFIER" value="1N4148-WS"/>
 <attribute name="U_D1" value="~0.6V"/>
 </part>
-<part name="R12" library="resistor" deviceset="R-EU_" device="R0603" value="14k"/>
+<part name="R12" library="resistor" deviceset="R-EU_" device="R0603" value="27k"/>
 <part name="P+5" library="supply1" deviceset="+12V" device=""/>
 <part name="D2" library="diode" deviceset="ZENER-DIODE" device="SOT23" value="4.7V"/>
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
@@ -42903,10 +42903,10 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 150mA
 EN not inverted</text>
 <text x="193.04" y="144.78" size="1.27" layer="97">measure V_ON:</text>
-<text x="193.04" y="142.24" size="1.27" layer="97">ONBTN open: VCC - U_D1 = 5V - U_D1</text>
-<text x="193.04" y="139.7" size="1.27" layer="97">ONBTN closed: 12V * 10k / (10k + 14k) = 5V</text>
+<text x="193.04" y="142.24" size="1.27" layer="97">ONBTN open: VCC - U_D1 = 3.3V - U_D1</text>
+<text x="193.04" y="139.7" size="1.27" layer="97">ONBTN closed: 12V * 10k / (10k + 28k) = 3.3V</text>
 <text x="236.22" y="137.16" size="1.27" layer="97">voltage divider with R11:</text>
-<text x="236.22" y="134.62" size="1.27" layer="97">R12/R11 has to be &gt; 1.4</text>
+<text x="236.22" y="134.62" size="1.27" layer="97">R12/R11 has to be &gt; 2.7</text>
 <text x="236.22" y="132.08" size="1.27" layer="97">in order not to damage</text>
 <text x="236.22" y="129.54" size="1.27" layer="97">AVR inputs</text>
 </plain>
