@@ -5,7 +5,7 @@
 
 class Tlc5951
 {
-	typedef SpiSimpleMaster Spi;
+	typedef ::xpcc::atmega::SpiMaster Spi;
 	typedef GpioOutputB2 Gslat;
 	typedef GpioOutputB1 Xblnk;
 
@@ -18,35 +18,35 @@ class Tlc5951
 	enum class
 	RangeRed : uint8_t
 	{
-		Lower  = 0,			/// constant current control    0% -  66.7%
+		Lower  = (0<<0),	/// constant current control    0% -  66.7%
 		Higher = (1<<0),	/// constant current control 33.3% - 100.0%
 	};
 
 	enum class
 	RangeGreen : uint8_t
 	{
-		Lower  = 0,			/// constant current control    0% -  66.7%
+		Lower  = (0<<1),	/// constant current control    0% -  66.7%
 		Higher = (1<<1),	/// constant current control 33.3% - 100.0%
 	};
 
 	enum class
 	RangeBlue : uint8_t
 	{
-		Lower  = 0,			/// constant current control    0% -  66.7%
+		Lower  = (0<<2),	/// constant current control    0% -  66.7%
 		Higher = (1<<2),	/// constant current control 33.3% - 100.0%
 	};
 
 	enum class
 	AutoDisplayRepeatMode : uint8_t
 	{
-		Disable = 0,		/// each output driver is turned on and off once after XBLINK goes high
+		Disable = (0<<3),	/// each output driver is turned on and off once after XBLINK goes high
 		Enable  = (1<<3),	/// cycle
 	};
 
 	enum class
 	DisplayTimingResetMode : uint8_t
 	{
-		Disable = 0,		/// XBLINK is needed to reset GS counter
+		Disable = (0<<4),	/// XBLINK is needed to reset GS counter
 		Enable  = (1<<4),	/// GS counter is reset to 0 at GSLAT rising edge for a GS data write
 	};
 
@@ -70,7 +70,7 @@ public:
 		GpioOutputB3::connect(Spi::Mosi);
 		GpioInputB4::connect(Spi::Miso);
 		GpioOutputB5::connect(Spi::Sck);
-		Spi::initialize<10000000>();
+		Spi::initialize<xpcc::avr::SystemClock, 1250000>();
 		Spi::setDataMode(Spi::DataMode::Mode0);
 		XPCC_LOG_DEBUG<< "Spi initialized" << xpcc::endl;
 		// initialize Control
@@ -93,25 +93,21 @@ public:
 			for(uint8_t ii = 0; ii < 24; ++ii){
 				uint16_t buffer = lut[*ptr];
 				if(shared_high) { // we share a high nibble
-					Spi::writeBlocking((buffer >> 4) & 0xff);
+					Spi::transferBlocking((buffer >> 4) & 0xff);
 					shared = (buffer & 0x0f) << 4;
 				} else {
 					shared |= (buffer >> 8) & 0x0f;
-					Spi::writeBlocking(shared);
-					Spi::writeBlocking(buffer & 0xff);
+					Spi::transferBlocking(shared);
+					Spi::transferBlocking(buffer & 0xff);
 				}
 				shared_high = !shared_high;
 				--ptr;
 			}
 		} else { // when called with a NULL pointer => clear all channels
 			for(uint8_t ii = 0; ii < 36; ++ii) {
-				Spi::writeBlocking(0x00);
+				Spi::transferBlocking(0x00);
 			}
 		}
-
-		// wait for last transfer to finish
-		while(!Spi::isFinished())
-			;
 	}
 
 	/// for Grayscale Data
@@ -149,44 +145,23 @@ public:
 		// bit 215-199 user data
 		// => 89 blank bits
 		// => 11 bytes and 1 bit
-		//XPCC_LOG_DEBUG << "Spi::isFinished(): " << Spi::isFinished() << xpcc::endl;
-		//Spi::write(0);
-		SPDR = 0;
-		// wait for the transmission to complete
-		while (!(SPSR & (1 << SPIF)))
-			;
-		
-		//XPCC_LOG_DEBUG << "Wrote one byte" << xpcc::endl;
-		//XPCC_LOG_DEBUG << "Spi::isFinished(): " << Spi::isFinished() << xpcc::endl;
-		//XPCC_LOG_DEBUG << "Spi::isFinished(): " << Spi::isFinished() << xpcc::endl;
-		//XPCC_LOG_DEBUG << "Spi::isFinished(): " << Spi::isFinished() << xpcc::endl;
-		//XPCC_LOG_DEBUG << "Spi::isFinished(): " << Spi::isFinished() << xpcc::endl;
+
 		for(uint8_t ii = 0; ii < 10; ++ii) {
-			Spi::writeBlocking(0);
+			Spi::transferBlocking(0);
 		}
+
 		//XPCC_LOG_DEBUG << "Wrote empty bytes" << xpcc::endl;
 		// 7 bit function control (+ MSB 0, see above)
-		Spi::writeBlocking(function & 0x7f);		// bit 199-192
+		Spi::transferBlocking(function & 0x7f);		// bit 199-192
 		// Global Brightness: 3 bytes
-		Spi::writeBlocking(GlobalBrightnessBlue);	// bit 191-184
-		Spi::writeBlocking(GlobalBrightnessGreen);	// bit 183-176
-		Spi::writeBlocking(GlobalBrightnessRed);	// bit 175-168
+		Spi::transferBlocking(GlobalBrightnessBlue);	// bit 191-184
+		Spi::transferBlocking(GlobalBrightnessGreen);	// bit 183-176
+		Spi::transferBlocking(GlobalBrightnessRed);		// bit 175-168
 		// bit 167-0: 24 Channel 7 bit dot correction => 7 bytes per channel
-		// Blue Channels
-		for(uint8_t ii = 0; ii < 7; ++ii) {
-			Spi::writeBlocking(0xff);
+		// 21 bytes for Dot Correction
+		for(uint8_t ii = 0; ii < 21; ++ii) {
+			Spi::transferBlocking(0xff);
 		}
-		// Green Channels
-		for(uint8_t ii = 0; ii < 7; ++ii) {
-			Spi::writeBlocking(0xff);
-		}
-		// Red Channels
-		for(uint8_t ii = 0; ii < 7; ++ii) {
-			Spi::writeBlocking(0xff);
-		}
-		// wait for last transfer to finish
-		while(!Spi::isFinished())
-			;
 
 		// in order to be sure not to display bullshit disable outputs before
 		// latching in data (most of the times Xblnk will already be low, but to be sure....)
@@ -194,9 +169,9 @@ public:
 
 		// latch in data
 		Gslat::reset();
-		xpcc::delay_us(1);
+		xpcc::delayMicroseconds(1);
 		Gslat::set();
-		xpcc::delay_us(1);
+		xpcc::delayMicroseconds(1);
 		Gslat::reset();	// default "position" for Gslat is low
 	}
 
