@@ -14,7 +14,7 @@ private:
 	Height = RowPort::width;
 
 	static uint8_t
-	buffers[2][Height][Width];
+	buffers[2][Height][Width*3];
 
 	static uint8_t
 	front_buffer;
@@ -39,11 +39,13 @@ public:
 	}
 
 	static inline void
-	setPixel(uint8_t color, uint8_t x, uint8_t y)
+	setPixel(uint8_t red, uint8_t green, uint8_t blue, uint8_t x, uint8_t y)
 	{
 		if(x >= Width)  return;
 		if(y >= Height) return;
-		buffers[back_buffer][y][x] = color;
+		buffers[back_buffer][y][x]   = red;
+		buffers[back_buffer][y][x+1] = green;
+		buffers[back_buffer][y][x+2] = blue;
 	}
 
 	static inline void
@@ -70,7 +72,7 @@ public:
 
 template<typename Tlc, typename RowPort, size_t Width>
 uint8_t
-Display<Tlc, RowPort, Width>::buffers[2][Display<Tlc, RowPort, Width>::Height][Width];
+Display<Tlc, RowPort, Width>::buffers[2][Display<Tlc, RowPort, Width>::Height][Width*3];
 
 template<typename Tlc, typename RowPort, size_t Width>
 uint8_t

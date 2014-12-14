@@ -54,9 +54,9 @@ MAIN_FUNCTION
 	XPCC_LOG_INFO << "iUhr 0.1 says hello...." << xpcc::endl;
 
 	Display::initialize<xpcc::avr::SystemClock, 1250000>();
-	Display::setPixel(0xff, 0, 0);
-	Display::setPixel(0xff, 0, 1);
-	Display::setPixel(0xff, 0, 2);
+	Display::setPixel(0xff, 0xff, 0xff, 0, 0);
+	Display::setPixel(0xff, 0xff, 0xff, 0, 1);
+	Display::setPixel(0xff, 0xff, 0xff, 0, 2);
 //	Display::swapBuffer();
 
 	// square wave at D5
